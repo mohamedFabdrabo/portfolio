@@ -1,0 +1,261 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 4.5rem;
+  --first-color: #7c3aed;
+  --first-color-alt: #5b21b6;
+  --first-color-second: #06b6d4;
+  --title-color: #f5f7ff;
+  --title-color-dark: #ffffff;
+  --text-color: #b4c2de;
+  --body-color: #07111f;
+  --body-color-alt: #091726;
+  --container-color: rgba(13, 24, 42, 0.82);
+  --container-color-solid: #0f1d31;
+  --border-color: rgba(167, 184, 216, 0.14);
+  --shadow-color: 0 24px 60px rgba(1, 6, 18, 0.35);
+
+  --body-font: "Inter", sans-serif;
+  --big-font-size: 4rem;
+  --h1-font-size: 2.6rem;
+  --h2-font-size: 1.7rem;
+  --h3-font-size: 1.15rem;
+  --normal-font-size: 1rem;
+  --small-font-size: 0.92rem;
+  --smaller-font-size: 0.82rem;
+  --tiny-font-size: 0.7rem;
+
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-semi-bold: 600;
+  --font-bold: 700;
+
+  --mb-0-25: 0.25rem;
+  --mb-0-5: 0.5rem;
+  --mb-0-75: 0.75rem;
+  --mb-1: 1rem;
+  --mb-1-5: 1.5rem;
+  --mb-2: 2rem;
+  --mb-2-5: 2.5rem;
+  --mb-3: 3rem;
+  --mb-4: 4rem;
+  --mb-5: 5rem;
+
+  --z-tooltip: 10;
+  --z-fixed: 100;
+  --z-modal: 1000;
+}
+
+/* Responsive typography */
+@media screen and (max-width: 992px) {
+  :root {
+    --big-font-size: 3rem;
+    --h1-font-size: 2.1rem;
+    --h2-font-size: 1.4rem;
+    --h3-font-size: 1rem;
+    --normal-font-size: 0.96rem;
+    --small-font-size: 0.88rem;
+    --smaller-font-size: 0.78rem;
+  }
+}
+
+/*=============== BASE ===============*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background:
+    radial-gradient(circle at top left, rgba(124, 58, 237, 0.18), transparent 32%),
+    radial-gradient(circle at top right, rgba(6, 182, 212, 0.14), transparent 34%),
+    linear-gradient(180deg, #06111d 0%, #07111f 100%);
+}
+
+body,
+button,
+input,
+textarea {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+}
+
+body {
+  background:
+    radial-gradient(circle at top left, rgba(124, 58, 237, 0.18), transparent 30%),
+    radial-gradient(circle at top right, rgba(6, 182, 212, 0.16), transparent 33%),
+    linear-gradient(180deg, #06111d 0%, #07111f 100%);
+  color: var(--text-color);
+  line-height: 1.7;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--title-color);
+  font-weight: var(--font-bold);
+  letter-spacing: -0.03em;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+::selection {
+  background: rgba(124, 58, 237, 0.35);
+  color: #fff;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.section {
+  padding: 7rem 0 2rem;
+  position: relative;
+}
+
+.section::before {
+  content: "";
+  position: absolute;
+  inset: 1rem auto auto 50%;
+  width: min(80vw, 960px);
+  height: 1px;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, transparent, rgba(6, 182, 212, 0.45), rgba(124, 58, 237, 0.45), transparent);
+}
+
+.section__title {
+  font-size: clamp(2rem, 3vw, var(--h1-font-size));
+  color: var(--title-color);
+}
+
+.section__subtitle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: var(--small-font-size);
+  margin-bottom: 4rem;
+  padding: 0.4rem 0.9rem;
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text-color);
+}
+
+.section__title,
+.section__subtitle {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+/*=============== LAYOUT ===============*/
+.container {
+  max-width: 1120px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+/*=============== BUTTONS ===============*/
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  background: linear-gradient(135deg, var(--first-color) 0%, var(--first-color-second) 100%);
+  color: #fff;
+  padding: 1rem 1.7rem;
+  border-radius: 999px;
+  font-weight: var(--font-semi-bold);
+  box-shadow: 0 18px 40px rgba(91, 33, 182, 0.28);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.04);
+  box-shadow: 0 24px 50px rgba(6, 182, 212, 0.16);
+}
+
+.button__icon {
+  margin-left: 0;
+}
+
+.button--flex {
+  display: inline-flex;
+  align-items: center;
+}
+
+/*=============== BREAKPOINTS ===============*/
+/* For large devices */
+@media screen and (max-width: 992px) {
+    .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .button {
+    padding: 0.95rem 1.4rem;
+  }
+
+  .button__icon {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+/* For medium devices */
+@media screen and (max-width: 768px) {
+  body {
+    margin: 0 0 var(--header-height) 0;
+  }
+  
+  .section {
+    padding: 5.5rem 0 3rem;
+  }
+
+  .section__subtitle {
+    margin-bottom: var(--mb-3);
+  }
+}
+
+@media screen and (max-width: 576px) {
+}
+
+/* For small devices */
+@media screen and (max-width: 350px) {
+  :root {
+    --big-font-size: 2.6rem;
+  }
+
+  .container {
+    padding-left: 0.85rem;
+    padding-right: 0.85rem;
+  }
+}
