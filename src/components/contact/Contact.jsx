@@ -20,8 +20,8 @@ const Contact = () => {
 
   return (
     <section className="contact section" id="contact">
-      <h2 className="section__title">Get in touch</h2>
-      <span className="section__subtitle">Contact Me</span>
+      <h2 className="section__title">Let's Talk</h2>
+      <span className="section__subtitle">I'd love to hear from you</span>
 
       <div className="contact__container container grid">
         <div className="contact__content">
@@ -32,10 +32,12 @@ const Contact = () => {
               <i className="bx bx-mail-send contact__card-icon"></i>
 
               <h3 className="contact__card-title">Email</h3>
-              <span className="contact__card-data">user@gmail.com</span>
+              <span className="contact__card-data">
+                mohamed.fathi.per@gmail.com
+              </span>
 
               <a
-                href="mailto:examplemail@gmail.com.com"
+                href="mailto:mohamed.fathi.per@gmail.com"
                 className="contact__button"
               >
                 Write me{" "}
@@ -44,28 +46,30 @@ const Contact = () => {
             </div>
 
             <div className="contact__card">
-              <i className="bx bxl-whatsapp contact__card-icon"></i>
+              <i className="bx bxl-linkedin contact__card-icon"></i>
 
-              <h3 className="contact__card-title">Whatsapp</h3>
-              <span className="contact__card-data">999-888-777</span>
+              <h3 className="contact__card-title">LinkedIn</h3>
+              <span className="contact__card-data">mohamed-f-abdrabou</span>
 
               <a
-                href="https://api.whatsapp.com/send?phone=62214408789&text=Hello, more information!"
+                href="https://linkedin.com/in/mohamed-f-abdrabou/"
+                target="_blank"
+                rel="noreferrer"
                 className="contact__button"
               >
-                Write me{" "}
+                Connect{" "}
                 <i className="bx bx-right-arrow-alt contact__button-icon"></i>
               </a>
             </div>
 
             <div className="contact__card">
-              <i className="bx bxl-messenger contact__card-icon"></i>
+              <i className="bx bx-phone contact__card-icon"></i>
 
-              <h3 className="contact__card-title">Messenger</h3>
-              <span className="contact__card-data">user.fb123</span>
+              <h3 className="contact__card-title">Phone</h3>
+              <span className="contact__card-data">+49 172 832 9367</span>
 
-              <a href="https://m.me/crypticalcoder" className="contact__button">
-                Write me{" "}
+              <a href="tel:+491728329367" className="contact__button">
+                Call me{" "}
                 <i className="bx bx-right-arrow-alt contact__button-icon"></i>
               </a>
             </div>
@@ -73,7 +77,7 @@ const Contact = () => {
         </div>
 
         <div className="contact__content">
-          <h3 className="contact__title">Write me your project</h3>
+          <h3 className="contact__title">Send me a message</h3>
 
           <form ref={form} onSubmit={sendEmail} className="contact__form">
             <div className="contact__form-div">
@@ -97,13 +101,13 @@ const Contact = () => {
             </div>
 
             <div className="contact__form-div contact__form-area">
-              <label className="contact__form-tag">Project</label>
+              <label className="contact__form-tag">Message</label>
               <textarea
                 name="project"
                 cols="30"
                 rows="10"
                 className="contact__form-input"
-                placeholder="Write your project"
+                placeholder="Tell me about your project or just say hi"
               ></textarea>
             </div>
 

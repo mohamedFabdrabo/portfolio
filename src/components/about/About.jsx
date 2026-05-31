@@ -1,14 +1,14 @@
 import React from "react";
 import "./about.css";
-import AboutImg from "../../assets/about.jpg";
-import CV from "../../assets/Smith-Cv.pdf";
+import AboutImg from "../../assets/personal/about.jpeg";
+import CV from "../../assets/personal/CV.pdf";
 import Info from "./Info";
 
 const About = () => {
   return (
     <section className="about section" id="about">
       <h2 className="section__title">About Me</h2>
-      <span className="section__subtitle">My introduction</span>
+      <span className="section__subtitle">Who I am</span>
 
       <div className="about__container container grid">
         <img src={AboutImg} alt="" className="about__img" />
@@ -17,9 +17,16 @@ const About = () => {
           <Info />
 
           <p className="about__description">
-            Frontend developer, I create web pages with UI / UX user interface,
-            I have years of experience and many clients are happy with the
-            projects carried out.
+            I'm a Computer Science Engineer (Highest Honors, GUC) and currently
+            a Data Science Master's student at Universität Potsdam, where my
+            studies focus on the mathematical foundations of data science:
+            linear algebra, probability, Bayesian statistics, and modern deep
+            learning. My journey started with Spring Boot backends at Aman for
+            E-payments, grew through a deep-learning brain hemorrhage detector
+            as my bachelor thesis, ETL data pipelines on AWS at Btech, and now
+            QA automation and LLM-powered developer tooling at Mercedes-Benz /
+            MBition. I love working at the intersection of software, data and
+            intelligence — and I'm always chasing the next thing to learn.
           </p>
 
           <a download="" href={CV} className="button button--flex">

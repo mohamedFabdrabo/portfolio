@@ -17,8 +17,8 @@ const Header = () => {
   return (
     <header className="header">
       <nav className="nav container">
-        <a href="index.html" className="nav__logo">
-          Smith
+        <a href="#home" className="nav__logo">
+          Mohamed F.
         </a>
 
         <div className={Toggle ? "nav__menu show-menu" : "nav__menu"}>
@@ -49,6 +49,34 @@ const Header = () => {
 
             <li className="nav__item">
               <a
+                href="#education"
+                onClick={() => setActiveNav("#education")}
+                className={
+                  activeNav === "#education"
+                    ? "nav__link active-link"
+                    : "nav__link"
+                }
+              >
+                <i className="uil uil-graduation-cap nav__icon"></i> Education
+              </a>
+            </li>
+
+            <li className="nav__item">
+              <a
+                href="#experience"
+                onClick={() => setActiveNav("#experience")}
+                className={
+                  activeNav === "#experience"
+                    ? "nav__link active-link"
+                    : "nav__link"
+                }
+              >
+                <i className="uil uil-briefcase-alt nav__icon"></i> Experience
+              </a>
+            </li>
+
+            <li className="nav__item">
+              <a
                 href="#skills"
                 onClick={() => setActiveNav("#skills")}
                 className={
@@ -58,20 +86,6 @@ const Header = () => {
                 }
               >
                 <i className="uil uil-file-alt nav__icon"></i> Skills
-              </a>
-            </li>
-
-            <li className="nav__item">
-              <a
-                href="#services"
-                onClick={() => setActiveNav("#services")}
-                className={
-                  activeNav === "#services"
-                    ? "nav__link active-link"
-                    : "nav__link"
-                }
-              >
-                <i className="uil uil-briefcase-alt nav__icon"></i> Services
               </a>
             </li>
 

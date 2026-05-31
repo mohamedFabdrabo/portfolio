@@ -6,11 +6,11 @@
 
 .services__content {
     position: relative;
-    border: 1px solid rgba(167, 184, 216, 0.12);
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.03));
+    border: 1px solid rgba(107, 127, 90, 0.12);
+    background: linear-gradient(180deg, rgba(255, 252, 244, 0.7), rgba(255, 252, 244, 0.5));
     padding: 6rem 0 2rem 2.5rem;
     border-radius: 1.35rem;
-    box-shadow: 0 18px 40px rgba(1, 6, 18, 0.18);
+    box-shadow: 0 18px 40px rgba(79, 95, 67, 0.18);
 }
 
 .services__icon {
@@ -67,8 +67,8 @@
     background: linear-gradient(180deg, rgba(13, 24, 42, 0.98), rgba(9, 22, 38, 0.98));
     padding: 4.5rem 2.5rem 2.5rem;
     border-radius: 1.5rem;
-    border: 1px solid rgba(167, 184, 216, 0.12);
-    box-shadow: 0 30px 80px rgba(1, 6, 18, 0.45);
+    border: 1px solid rgba(107, 127, 90, 0.12);
+    box-shadow: 0 30px 80px rgba(79, 95, 67, 0.45);
 }
 
 .services__modal-close {

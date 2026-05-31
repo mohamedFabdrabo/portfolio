@@ -21,8 +21,8 @@
 
 .qualification__button:hover {
     color: var(--title-color);
-    border-color: rgba(167, 184, 216, 0.12);
-    background: rgba(255, 255, 255, 0.03);
+    border-color: rgba(107, 127, 90, 0.12);
+    background: rgba(255, 252, 244, 0.5);
 }
 
 .qualification__icon {
@@ -69,6 +69,23 @@
 
 .qualification__calender {
     font-size: var(--small-font-size);
+}
+
+.qualification__bullets {
+    list-style: disc;
+    padding-left: 1.1rem;
+    margin-top: 0.5rem;
+    color: var(--text-color);
+    font-size: var(--small-font-size);
+    line-height: 1.55;
+}
+
+.qualification__bullets li {
+    margin-bottom: 0.25rem;
+}
+
+.qualification__single {
+    grid-template-columns: 1fr;
 }
 
 .qualification__rounder {

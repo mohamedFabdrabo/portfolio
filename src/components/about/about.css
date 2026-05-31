@@ -8,8 +8,8 @@
     width: 360px;
     border-radius: 1.75rem;
     justify-self: center;
-    box-shadow: 0 22px 60px rgba(1, 6, 18, 0.35);
-    border: 1px solid rgba(167, 184, 216, 0.14);
+    box-shadow: 0 22px 60px rgba(79, 95, 67, 0.35);
+    border: 1px solid rgba(107, 127, 90, 0.14);
 }
 
 .about__info {
@@ -19,8 +19,8 @@
 }
 
 .about__box {
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.03));
-    border: 1px solid rgba(167, 184, 216, 0.12);
+    background: linear-gradient(180deg, rgba(255, 252, 244, 0.7), rgba(255, 252, 244, 0.5));
+    border: 1px solid rgba(107, 127, 90, 0.12);
     border-radius: 1rem;
     text-align: center;
     padding: 1rem 1.25rem;

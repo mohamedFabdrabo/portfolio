@@ -18,7 +18,8 @@ const Projects = () => {
       setProjects(projectsData);
     } else {
       const newProjects = projectsData.filter((project) => {
-        return project.category.toLowerCase() === item.name;
+        const cats = (project.categories || []).map((c) => c.toLowerCase());
+        return cats.includes(item.name);
       });
       setProjects(newProjects);
     }
