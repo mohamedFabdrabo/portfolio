@@ -168,6 +168,10 @@ img {
   display: block;
 }
 
+.section__subtitle {
+  display: none;
+}
+
 /*=============== LAYOUT ===============*/
 .container {
   max-width: 1120px;

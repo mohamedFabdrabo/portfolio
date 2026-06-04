@@ -21,7 +21,7 @@ import Work5 from "../../assets/portfolio/work5.jpg";
  *               Keys must match entries in `projectsNav` below.
  *
  * Available category keys (must match `projectsNav` below):
- *   "machine learning", "deep learning", "computer vision",
+ *   "machine learning", "deep learning & computer vision",
  *   "full stack", "backend", "databases", "security",
  *   "java", "python"
  *
@@ -117,8 +117,7 @@ export const projectsData = [
 export const projectsNav = [
   { name: "all" },
   { name: "machine learning" },
-  { name: "deep learning" },
-  { name: "computer vision" },
+  { name: "deep learning & computer vision" },
   { name: "full stack" },
   { name: "backend" },
   { name: "databases" },

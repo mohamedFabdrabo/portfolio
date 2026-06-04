@@ -61,18 +61,6 @@ const Contact = () => {
                 <i className="bx bx-right-arrow-alt contact__button-icon"></i>
               </a>
             </div>
-
-            <div className="contact__card">
-              <i className="bx bx-phone contact__card-icon"></i>
-
-              <h3 className="contact__card-title">Phone</h3>
-              <span className="contact__card-data">+49 172 832 9367</span>
-
-              <a href="tel:+491728329367" className="contact__button">
-                Call me{" "}
-                <i className="bx bx-right-arrow-alt contact__button-icon"></i>
-              </a>
-            </div>
           </div>
         </div>
 
