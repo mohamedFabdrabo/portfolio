@@ -127,14 +127,14 @@ img {
 
 /*=============== REUSABLE CSS CLASSES ===============*/
 .section {
-  padding: 7rem 0 2rem;
+  padding: 5.5rem 0 2rem;
   position: relative;
 }
 
 .section::before {
   content: "";
   position: absolute;
-  inset: 1rem auto auto 50%;
+  inset: 3.4rem auto auto 50%;
   width: min(80vw, 960px);
   height: 1px;
   transform: translateX(-50%);
@@ -144,6 +144,7 @@ img {
 .section__title {
   font-size: clamp(2rem, 3vw, var(--h1-font-size));
   color: var(--title-color);
+  margin-bottom: 2.2rem;
 }
 
 .section__subtitle {
@@ -241,7 +242,15 @@ img {
   }
   
   .section {
-    padding: 5.5rem 0 3rem;
+    padding: 5rem 0 3rem;
+  }
+
+  .section::before {
+    inset: 3rem auto auto 50%;
+  }
+
+  .section__title {
+    margin-bottom: 1.75rem;
   }
 
   .section__subtitle {
