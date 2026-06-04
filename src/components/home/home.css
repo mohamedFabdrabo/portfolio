@@ -52,22 +52,11 @@
 .home__subtitle {
   position: relative;
   font-size: var(--h3-font-size);
-  padding-left: 5.2rem;
   font-weight: var(--font-medium);
   margin-bottom: var(--mb-1);
   color: var(--first-color-second);
   text-transform: uppercase;
   letter-spacing: 0.14em;
-}
-
-.home__subtitle::before {
-  content: "";
-  position: absolute;
-  width: 70px;
-  height: 2px;
-  background: linear-gradient(90deg, var(--first-color), var(--first-color-second));
-  left: 0;
-  top: 1rem;
 }
 
 .home__description {
@@ -147,13 +136,7 @@
   }
 
   .home__subtitle {
-    padding-left: 3.75rem;
     margin-bottom: var(--mb-1);
-  }
-
-  .home__subtitle::before {
-    width: 42px;
-    top: 0.8rem;
   }
 
   .home__description {
