@@ -1,11 +1,10 @@
-<<<<<<< HEAD
 /.junie/
-=======
+
 # Dependencies
 node_modules/
 
 # Build output
-dist/
+# dist/
 
 # Logs
 npm-debug.log*
