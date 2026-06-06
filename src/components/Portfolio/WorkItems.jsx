@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 const isYouTubeOrEmbed = (url) =>
   /youtube\.com|youtu\.be|vimeo\.com/i.test(url);
@@ -6,10 +6,14 @@ const isYouTubeOrEmbed = (url) =>
 const WorkItems = ({ item }) => {
   const extraImages = Array.isArray(item.images) ? item.images : [];
   const hasVideo = item.video && item.video.length > 0;
+  const [mainImage, setMainImage] = useState(item.image);
 
   return (
     <div className="work__card" key={item.id}>
-      <img src={item.image} alt={item.title} className="work__img" />
+      {/* Show main image only if no video */}
+      {!hasVideo && (
+        <img src={mainImage} alt={item.title} className="work__img" />
+      )}
 
       {hasVideo && (
         <div className="work__video">
@@ -27,7 +31,8 @@ const WorkItems = ({ item }) => {
         </div>
       )}
 
-      {extraImages.length > 0 && (
+      {/* Show clickable gallery only if no video */}
+      {!hasVideo && extraImages.length > 0 && (
         <div className="work__gallery">
           {extraImages.map((src, idx) => (
             <img
@@ -35,6 +40,8 @@ const WorkItems = ({ item }) => {
               src={src}
               alt={`${item.title} screenshot ${idx + 1}`}
               className="work__gallery-img"
+              onClick={() => setMainImage(src)}
+              style={{ cursor: "pointer" }}
             />
           ))}
         </div>
@@ -45,15 +52,28 @@ const WorkItems = ({ item }) => {
         <p className="work__description">{item.description}</p>
       )}
       {item.tech && <span className="work__tech">{item.tech}</span>}
-      <a
-        href={item.github}
-        target="_blank"
-        rel="noreferrer"
-        className="work__button"
-      >
-        View on GitHub
-        <i className="bx bxl-github work__button-icon"></i>
-      </a>
+      <div className="work__links">
+        <a
+          href={item.github}
+          target="_blank"
+          rel="noreferrer"
+          className="work__button"
+        >
+          View on GitHub
+          <i className="bx bxl-github work__button-icon"></i>
+        </a>
+        {item.report && (
+          <a
+            href={item.report}
+            target="_blank"
+            rel="noreferrer"
+            className="work__button work__button--report"
+          >
+            View Report
+            <i className="bx bxs-file-pdf work__button-icon"></i>
+          </a>
+        )}
+      </div>
     </div>
   );
 };

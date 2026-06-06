@@ -1,8 +1,29 @@
-import Work1 from "../../assets/portfolio/work1.jpg";
-import Work2 from "../../assets/portfolio/work2.jpg";
-import Work3 from "../../assets/portfolio/work3.jpg";
-import Work4 from "../../assets/portfolio/work4.jpg";
-import Work5 from "../../assets/portfolio/work5.jpg";
+
+// Brain Hemorrhage Detection
+import BrainMain from "../../assets/portfolio/brain_hemorrhage/main_page.jpg";
+import BrainResult from "../../assets/portfolio/brain_hemorrhage/result.jpg";
+import BrainAnnotated from "../../assets/portfolio/brain_hemorrhage/annotated_results.jpg";
+
+// Customer Churn Prediction
+import ChurnResults from "../../assets/portfolio/churn/test_results.jpg";
+import ChurnTree from "../../assets/portfolio/churn/decision_tree.png";
+
+// Contour Detection & Image Segmentation
+import ContourResults from "../../assets/portfolio/contour/Results.png";
+import ContourVideo from "../../assets/portfolio/contour/DemoVideo.mp4";
+import ContourReport from "../../assets/portfolio/contour/report.pdf";
+
+// Database Engine
+import DBIndexing from "../../assets/portfolio/db/indexing.jpg";
+import DBIndexing2 from "../../assets/portfolio/db/indexing2.jpg";
+
+// Advanced Computer Lab
+import GUCLogin from "../../assets/portfolio/guc/login.jpg";
+import GUCDemo from "../../assets/portfolio/guc/demo.mp4";
+
+// EHR Blockchain Simulation
+import BlockchainDemo from "../../assets/portfolio/blockchain/demo.jpg";
+import BlockchainVideo from "../../assets/portfolio/blockchain/demo.mp4";
 
 /*
  * HOW TO ADD / EDIT A PROJECT
@@ -31,9 +52,9 @@ import Work5 from "../../assets/portfolio/work5.jpg";
 export const projectsData = [
   {
     id: 1,
-    image: Work1,
-    images: [], // add extra screenshots here later
-    video: "",  // add a YouTube embed URL or .mp4 link here later
+    image: BrainMain,
+    images: [BrainMain, BrainResult, BrainAnnotated],
+    video: "",
     title: "Brain Hemorrhage Detection",
     description:
       "Bachelor thesis (Grade A+). Deep learning pipeline that detects brain hemorrhages in CT images using YOLOv5 in PyTorch, with OpenCV preprocessing for grayscale conversion and image normalization. Wrapped in a Flask web app for interactive inference.",
@@ -45,8 +66,8 @@ export const projectsData = [
   },
   {
     id: 2,
-    image: Work2,
-    images: [],
+    image: ChurnTree,
+    images: [ChurnResults, ChurnTree],
     video: "",
     title: "Customer Churn Prediction",
     description:
@@ -58,9 +79,10 @@ export const projectsData = [
   },
   {
     id: 3,
-    image: Work3,
+    image: ContourResults,
     images: [],
-    video: "",
+    video: ContourVideo,
+    report: ContourReport,
     title: "Contour Detection & Image Segmentation",
     description:
       "Research-style project comparing classical computer vision (Sobel/Canny edge detection and morphological operations) against PyTorch encoder–decoder networks for semantic segmentation, with ablation studies on both approaches.",
@@ -72,9 +94,9 @@ export const projectsData = [
   },
   {
     id: 4,
-    image: Work4,
+    image: GUCLogin,
     images: [],
-    video: "",
+    video: GUCDemo,
     title: "Advanced Computer Lab — Staff Management System",
     description:
       "Course project built as two separate repositories: a Node.js/Express backend exposing REST APIs over MongoDB with JWT-based role access for 5 user roles, and a React single-page app for HR workflows (attendance, leave requests, course assignments, schedules). I additionally wrote a Docker wrapper that pulls both repos and runs them together with a single command so visitors can try the app without manual setup.",
@@ -86,8 +108,8 @@ export const projectsData = [
   },
   {
     id: 5,
-    image: Work5,
-    images: [],
+    image: DBIndexing,
+    images: [DBIndexing, DBIndexing2],
     video: "",
     title: "Lightweight Database Engine",
     description:
@@ -99,9 +121,9 @@ export const projectsData = [
   },
   {
     id: 6,
-    image: Work1,
+    image: BlockchainDemo,
     images: [],
-    video: "",
+    video: BlockchainVideo,
     title: "EHR Blockchain Simulation",
     description:
       "Simulation of an electronic health records blockchain in Java: configurable proof-of-work consensus, transaction hashing and immutable block chaining, AES-256 encryption for patient records, and credential-based role access for patients and providers.",

@@ -120,6 +120,17 @@
   transform: translateX(0.25rem);
 }
 
+.work__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: var(--mb-1);
+}
+
+.work__button--report {
+  color: #d63031;
+}
+
 /* Active Item Work */
 .active-work {
   background: linear-gradient(135deg, var(--first-color), var(--first-color-second));
