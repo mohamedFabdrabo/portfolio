@@ -16,6 +16,12 @@ const Projects = () => {
     // get projects based on item
     if (item.name === "all") {
       setProjects(projectsData);
+    } else if (item.name === "deep learning & computer vision") {
+      const newProjects = projectsData.filter((project) => {
+        const cats = (project.categories || []).map((c) => c.toLowerCase());
+        return cats.includes("deep learning") || cats.includes("computer vision");
+      });
+      setProjects(newProjects);
     } else {
       const newProjects = projectsData.filter((project) => {
         const cats = (project.categories || []).map((c) => c.toLowerCase());
