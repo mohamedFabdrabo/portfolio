@@ -19,14 +19,14 @@ const WorkItems = ({ item }) => {
         <div className="work__video">
           {isYouTubeOrEmbed(item.video) ? (
             <iframe
-              src={item.video}
+              src={`${item.video}${item.video.includes('?') ? '&' : '?'}autoplay=1`}
               title={`${item.title} demo`}
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             ></iframe>
           ) : (
-            <video src={item.video} controls preload="metadata" />
+            <video src={item.video} controls preload="metadata" autoPlay muted />
           )}
         </div>
       )}

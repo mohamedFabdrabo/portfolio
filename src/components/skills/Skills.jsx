@@ -21,6 +21,7 @@ const skillGroups = [
       "XGBoost",
       "Bayesian Statistics",
       "Deep Learning",
+      "Grafana", "OpenCV", "Scikit-image", "YOLOv5",
     ],
   },
   {
@@ -34,27 +35,12 @@ const skillGroups = [
     items: ["AWS", "Google Cloud Platform", "Docker", "Linux", "CI/CD", "Git"],
   },
   {
-    title: "Backend & Web",
+    title: "Backend & Databases",
     icon: "uil uil-server-network",
-    items: ["Flask", "Spring Boot", "REST APIs", "Hibernate", "Maven", "JUnit"],
+    items: ["Flask", "Spring Boot", "REST APIs", "Hibernate", "Maven","PostgreSQL", "MySQL", "SQL Server", "MongoDB", "NoSQL"],
   },
   {
-    title: "Databases",
-    icon: "uil uil-database-alt",
-    items: ["PostgreSQL", "MySQL", "SQL Server", "MongoDB", "NoSQL"],
-  },
-  {
-    title: "Computer Vision",
-    icon: "uil uil-eye",
-    items: ["OpenCV", "Scikit-image", "YOLOv5", "Image Segmentation"],
-  },
-  {
-    title: "Tools & IDEs",
-    icon: "uil uil-wrench",
-    items: ["VS Code", "IntelliJ", "PyCharm", "Jupyter", "Google Colab", "Grafana"],
-  },
-  {
-    title: "Spoken Languages",
+    title: "Languages",
     icon: "uil uil-globe",
     items: ["Arabic (Native)", "English (Fluent)", "German (B1 — learning)"],
   },

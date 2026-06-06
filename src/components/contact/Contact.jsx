@@ -1,21 +1,46 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import emailjs from '@emailjs/browser';
 import "./contact.css";
 
 const Contact = () => {
   const form = useRef();
+  const [message, setMessage] = useState("");
+  const [messageType, setMessageType] = useState("");
 
   const sendEmail = (e) => {
     e.preventDefault();
 
     emailjs
       .sendForm(
-        "service_x1hewh5",
-        "template_2ki8hlo",
-        form.current,
-        "vxDcl4UI2jbOQBn6f"
+        "service_nzwwq0h",
+        "template_69hfbof",
+        form.current
       )
-      e.target.reset()
+      .then(
+        (result) => {
+          console.log("Email sent successfully:", result.text);
+          form.current.reset();
+          setMessage("Message sent successfully! I'll get back to you soon.");
+          setMessageType("success");
+          
+          // Auto-hide message after 5 seconds
+          setTimeout(() => {
+            setMessage("");
+            setMessageType("");
+          }, 5000);
+        },
+        (error) => {
+          console.log("Error sending email:", error.text);
+          setMessage("Failed to send message. Please try again.");
+          setMessageType("error");
+          
+          // Auto-hide message after 5 seconds
+          setTimeout(() => {
+            setMessage("");
+            setMessageType("");
+          }, 5000);
+        }
+      );
   };
 
   return (
@@ -61,11 +86,34 @@ const Contact = () => {
                 <i className="bx bx-right-arrow-alt contact__button-icon"></i>
               </a>
             </div>
+
+            <div className="contact__card">
+              <i className="bx bxl-github contact__card-icon"></i>
+
+              <h3 className="contact__card-title">GitHub</h3>
+              <span className="contact__card-data">mohamedFabdrabo</span>
+
+              <a
+                href="https://github.com/mohamedFabdrabo"
+                target="_blank"
+                rel="noreferrer"
+                className="contact__button"
+              >
+                Visit{" "}
+                <i className="bx bx-right-arrow-alt contact__button-icon"></i>
+              </a>
+            </div>
           </div>
         </div>
 
         <div className="contact__content">
           <h3 className="contact__title">Send me a message</h3>
+
+          {message && (
+            <div className={`contact__message contact__message--${messageType}`}>
+              {message}
+            </div>
+          )}
 
           <form ref={form} onSubmit={sendEmail} className="contact__form">
             <div className="contact__form-div">

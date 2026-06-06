@@ -5,12 +5,6 @@ const Data = () => {
     <div className="home__data">
       <h1 className="home__title">Mohamed Fathi</h1>
       <h3 className="home__subtitle">Software Engineer &amp; Data Scientist</h3>
-      <p className="home__description">
-        Based in Potsdam, Germany. I build software and data systems — from
-        backend services and cloud pipelines to machine learning and deep
-        learning models. I enjoy turning ideas into reliable, well-engineered
-        products and I'm always curious about what comes next.
-      </p>
 
       <a href="#contact" className="button button--flex">
         Say Hello
