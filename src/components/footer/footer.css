@@ -9,7 +9,7 @@
 
 .footer__title,
 .footer__link {
-    color: var(--title-color);
+    color: #f7f1e6;
 }
 
 .footer__title {
@@ -18,7 +18,7 @@
 }
 
 .footer__link:hover {
-    color: var(--title-color-dark);
+    color: #ffffff;
 }
 
 .footer__list {
@@ -50,7 +50,7 @@
 .footer__copy {
     display: block;
     margin-top: 2rem;
-    color: var(--text-color);
+    color: #d6cfbf;
     text-align: center;
     font-size: var(--smaller-font-size);
 }

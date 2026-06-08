@@ -4,19 +4,61 @@ const isYouTubeOrEmbed = (url) =>
   /youtube\.com|youtu\.be|vimeo\.com/i.test(url);
 
 const WorkItems = ({ item }) => {
-  const extraImages = Array.isArray(item.images) ? item.images : [];
+  const imageList =
+    Array.isArray(item.images) && item.images.length > 0
+      ? item.images
+      : [item.image];
   const hasVideo = item.video && item.video.length > 0;
-  const [mainImage, setMainImage] = useState(item.image);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const goToPrevImage = () => {
+    setCurrentImageIndex((prev) =>
+      prev === 0 ? imageList.length - 1 : prev - 1
+    );
+  };
+
+  const goToNextImage = () => {
+    setCurrentImageIndex((prev) =>
+      prev === imageList.length - 1 ? 0 : prev + 1
+    );
+  };
 
   return (
     <div className="work__card" key={item.id}>
-      {/* Show main image only if no video */}
       {!hasVideo && (
-        <img src={mainImage} alt={item.title} className="work__img" />
+        <div className="work__media" aria-label={`${item.title} screenshots`}>
+          <img
+            src={imageList[currentImageIndex]}
+            alt={`${item.title} screenshot ${currentImageIndex + 1}`}
+            className="work__img"
+            loading="lazy"
+          />
+
+          {imageList.length > 1 && (
+            <>
+              <button
+                type="button"
+                className="work__media-btn work__media-btn--prev"
+                onClick={goToPrevImage}
+                aria-label="Previous screenshot"
+              >
+                <i className="bx bx-chevron-left"></i>
+              </button>
+              <button
+                type="button"
+                className="work__media-btn work__media-btn--next"
+                onClick={goToNextImage}
+                aria-label="Next screenshot"
+              >
+                <i className="bx bx-chevron-right"></i>
+              </button>
+            </>
+          )}
+        </div>
       )}
 
       {hasVideo && (
-        <div className="work__video">
+        <div className="work__media work__video">
           {isYouTubeOrEmbed(item.video) ? (
             <iframe
               src={`${item.video}${item.video.includes('?') ? '&' : '?'}autoplay=1`}
@@ -28,22 +70,6 @@ const WorkItems = ({ item }) => {
           ) : (
             <video src={item.video} controls preload="metadata" autoPlay muted />
           )}
-        </div>
-      )}
-
-      {/* Show clickable gallery only if no video */}
-      {!hasVideo && extraImages.length > 0 && (
-        <div className="work__gallery">
-          {extraImages.map((src, idx) => (
-            <img
-              key={idx}
-              src={src}
-              alt={`${item.title} screenshot ${idx + 1}`}
-              className="work__gallery-img"
-              onClick={() => setMainImage(src)}
-              style={{ cursor: "pointer" }}
-            />
-          ))}
         </div>
       )}
 

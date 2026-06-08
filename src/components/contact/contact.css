@@ -1,8 +1,13 @@
 .contact__container {
-    grid-template-columns: repeat(2, max-content);
+    grid-template-columns: repeat(2, minmax(320px, 360px));
     justify-content: center;
+    align-items: start;
     column-gap: 6rem;
     padding-bottom: 3rem;
+}
+
+.contact__content {
+    width: 100%;
 }
 
 .contact__title {
@@ -15,7 +20,7 @@
 .contact__info {
     display: grid;
     row-gap: 1rem;
-    grid-template-columns: 300px;
+    grid-template-columns: 1fr;
 }
 
 .contact__card {
@@ -66,7 +71,7 @@
 }
 
 .contact__form {
-    width: 360px;
+    width: 100%;
 }
 
 .contact__form-div {

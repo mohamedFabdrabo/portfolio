@@ -56,6 +56,13 @@
     column-gap: 1.5rem;
 }
 
+.qualification__data > div:nth-child(2) {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .qualification__title {
     font-size: var(--normal-font-size);
     font-weight: var(--font-medium);
@@ -89,6 +96,8 @@
 }
 
 .qualification__rounder {
+    position: relative;
+    z-index: 2;
     display: inline-block;
     width: 13px;
     height: 13px;
@@ -97,11 +106,15 @@
 }
 
 .qualification__line {
+    position: absolute;
+    top: 13px;
+    bottom: -0.25rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
     display: block;
-    width: 1px;
-    height: 100%;
+    width: 2px;
     background: linear-gradient(180deg, rgba(6, 182, 212, 0.9), rgba(124, 58, 237, 0.9));
-    transform: translate(6px, -7px);
 }
 
 /*=============== BREAKPOINTS ===============*/

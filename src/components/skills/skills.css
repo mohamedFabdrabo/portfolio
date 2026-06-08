@@ -20,6 +20,11 @@
 .skills__group-icon {
     font-size: 1.5rem;
     color: var(--first-color);
+    line-height: 1;
+    width: 1.5rem;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .skills__list {
@@ -59,6 +64,12 @@
     font-weight: var(--font-medium);
     text-align: center;
     margin-bottom: var(--mb-1-5);
+}
+
+.skills__header .skills__title {
+    margin: 0;
+    text-align: left;
+    line-height: 1.25;
 }
 
 .skills__box {
