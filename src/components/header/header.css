@@ -93,38 +93,55 @@
 /* For medium devices */
 @media screen and (max-width: 768px) {
     .header {
-        top: initial;
-        bottom: 0;
+        top: 0;
+        bottom: initial;
     }
 
     .nav {
         height: var(--header-height);
     }
 
-        .nav__menu {
-            position: fixed;
-            bottom: -100%;
-            left: 0;
-            width: 100%;
-            background: rgba(251, 246, 236, 0.96);
-            backdrop-filter: blur(18px);
-            -webkit-backdrop-filter: blur(18px);
-            padding: 2rem 1.5rem 4rem;
-            box-shadow: 0 -10px 40px rgba(79, 95, 67, 0.18);
-            border-radius: 1.5rem 1.5rem 0 0;
-            transition: .3s;
-            border-top: 1px solid rgba(107, 127, 90, 0.22);
-        }
+    .nav__menu {
+        position: fixed;
+        top: calc(var(--header-height) + 0.75rem);
+        left: 50%;
+        width: min(calc(100% - 1.5rem), 28rem);
+        background: rgba(251, 246, 236, 0.98);
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+        padding: 1.25rem 1rem 1rem;
+        box-shadow: 0 16px 40px rgba(79, 95, 67, 0.18);
+        border-radius: 1.25rem;
+        transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+        border: 1px solid rgba(107, 127, 90, 0.22);
+        transform: translate(-50%, -0.75rem);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
 
     /* Show Menu */
     .show-menu {
-        bottom: 0;
+        transform: translate(-50%, 0);
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
     }
 
     .nav__list {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 2rem;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1rem;
+    }
+
+    .nav__link {
+        justify-content: center;
+        min-height: 3.25rem;
+        padding: 0.65rem 0.5rem;
+        border-radius: 1rem;
+        text-align: center;
+        background: rgba(255, 252, 244, 0.65);
+        border: 1px solid rgba(107, 127, 90, 0.12);
     }
 
     .nav__icon {
@@ -133,8 +150,8 @@
 
     .nav__close {
         position: absolute;
-        right: 1.3rem;
-        bottom: .5rem;
+        right: 0.85rem;
+        top: 0.85rem;
         font-size: 1.5rem;
         cursor: pointer;
         color: var(--title-color);
@@ -159,10 +176,11 @@
 /* For small devices */
 @media screen and (max-width: 350px) {
     .nav__menu {
-        padding: 2rem 0.25rem 4rem;
+        width: calc(100% - 1rem);
+        padding: 1.1rem 0.75rem 0.85rem;
     }
 
     .nav__list {
-        column-gap: 0;
+        grid-template-columns: 1fr;
     }
 }

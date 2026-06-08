@@ -1,18 +1,37 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./header.css";
 
 const Header = () => {
-  /*=============== Change Background Header ===============*/
-  window.addEventListener("scroll", function () {
-    const header = document.querySelector(".header");
-    // when the scroll is higher than 200 viewport height, add the scroll-header class to a tag with the header tag
-    if (this.scrollY >= 80) header.classList.add("scroll-header");
-    else header.classList.remove("scroll-header");
-  });
-
   /*=============== Toggle Menu ===============*/
   const [Toggle, showMenu] = useState(false);
   const [activeNav, setActiveNav] = useState("#home");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const header = document.querySelector(".header");
+
+      if (!header) {
+        return;
+      }
+
+      if (window.scrollY >= 80) {
+        header.classList.add("scroll-header");
+      } else {
+        header.classList.remove("scroll-header");
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const handleNavClick = (navId) => {
+    setActiveNav(navId);
+    showMenu(false);
+  };
 
   return (
     <header className="header">
@@ -26,7 +45,7 @@ const Header = () => {
             <li className="nav__item">
               <a
                 href="#home"
-                onClick={() => setActiveNav("#home")}
+                onClick={() => handleNavClick("#home")}
                 className={
                   activeNav === "#home" ? "nav__link active-link" : "nav__link"
                 }
@@ -38,7 +57,7 @@ const Header = () => {
             <li className="nav__item">
               <a
                 href="#about"
-                onClick={() => setActiveNav("#about")}
+                onClick={() => handleNavClick("#about")}
                 className={
                   activeNav === "#about" ? "nav__link active-link" : "nav__link"
                 }
@@ -50,7 +69,7 @@ const Header = () => {
             <li className="nav__item">
               <a
                 href="#education"
-                onClick={() => setActiveNav("#education")}
+                onClick={() => handleNavClick("#education")}
                 className={
                   activeNav === "#education"
                     ? "nav__link active-link"
@@ -64,7 +83,7 @@ const Header = () => {
             <li className="nav__item">
               <a
                 href="#experience"
-                onClick={() => setActiveNav("#experience")}
+                onClick={() => handleNavClick("#experience")}
                 className={
                   activeNav === "#experience"
                     ? "nav__link active-link"
@@ -78,7 +97,7 @@ const Header = () => {
             <li className="nav__item">
               <a
                 href="#skills"
-                onClick={() => setActiveNav("#skills")}
+                onClick={() => handleNavClick("#skills")}
                 className={
                   activeNav === "#skills"
                     ? "nav__link active-link"
@@ -92,7 +111,7 @@ const Header = () => {
             <li className="nav__item">
               <a
                 href="#certificates"
-                onClick={() => setActiveNav("#certificates")}
+                onClick={() => handleNavClick("#certificates")}
                 className={
                   activeNav === "#certificates"
                     ? "nav__link active-link"
@@ -106,7 +125,7 @@ const Header = () => {
             <li className="nav__item">
               <a
                 href="#portfolio"
-                onClick={() => setActiveNav("#portfolio")}
+                onClick={() => handleNavClick("#portfolio")}
                 className={
                   activeNav === "#portfolio"
                     ? "nav__link active-link"
@@ -120,7 +139,7 @@ const Header = () => {
             <li className="nav__item">
               <a
                 href="#contact"
-                onClick={() => setActiveNav("#contact")}
+                onClick={() => handleNavClick("#contact")}
                 className={
                   activeNav === "#contact"
                     ? "nav__link active-link"

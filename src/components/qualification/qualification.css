@@ -129,8 +129,58 @@
   /* For medium devices */
   @media screen and (max-width: 768px) {
     .qualification__container {
-        margin-left: var(--mb-1-5);
-        margin-right: var(--mb-1-5);
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .qualification__data {
+        grid-template-columns: 1.1rem minmax(0, 1fr);
+        column-gap: 0.9rem;
+        align-items: start;
+        margin-bottom: 1.75rem;
+    }
+
+    .qualification__data > div:first-child:not(:empty),
+    .qualification__data > div:last-child {
+        grid-column: 2;
+    }
+
+    .qualification__data > div:first-child:empty {
+        display: none;
+    }
+
+    .qualification__data > div:nth-child(2) {
+        grid-column: 1;
+        grid-row: 1;
+        min-height: 100%;
+    }
+
+    .qualification__title,
+    .qualification__subtitle,
+    .qualification__calender,
+    .qualification__bullets {
+        max-width: 100%;
+        overflow-wrap: anywhere;
+    }
+
+    .qualification__title {
+        line-height: 1.45;
+        margin-bottom: 0.35rem;
+    }
+
+    .qualification__subtitle,
+    .qualification__calender {
+        line-height: 1.6;
+    }
+
+    .qualification__bullets {
+        padding-left: 1rem;
+        line-height: 1.7;
+    }
+
+    .qualification__bullets li {
+        margin-bottom: 0.45rem;
     }
   }
   

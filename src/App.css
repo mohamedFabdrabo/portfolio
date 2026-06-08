@@ -70,6 +70,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
   background:
     radial-gradient(circle at top left, rgba(107, 127, 90, 0.18), transparent 32%),
     radial-gradient(circle at top right, rgba(201, 138, 107, 0.16), transparent 34%),
@@ -85,6 +86,8 @@ textarea {
 }
 
 body {
+  margin: 0;
+  overflow-x: hidden;
   background:
     radial-gradient(circle at top left, rgba(107, 127, 90, 0.18), transparent 30%),
     radial-gradient(circle at top right, rgba(201, 138, 107, 0.18), transparent 33%),
@@ -238,9 +241,15 @@ img {
 /* For medium devices */
 @media screen and (max-width: 768px) {
   body {
-    margin: 0 0 var(--header-height) 0;
+    margin: 0;
   }
-  
+
+  .container {
+    width: 100%;
+    padding-left: 0.9rem;
+    padding-right: 0.9rem;
+  }
+
   .section {
     padding: 5rem 0 3rem;
   }
