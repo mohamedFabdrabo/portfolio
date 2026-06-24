@@ -53,56 +53,38 @@ const Contact = () => {
           <h3 className="contact__title">Talk to me</h3>
 
           <div className="contact__info">
-            <div className="contact__card">
+            <a
+              href="mailto:mohamed.fathi.per@gmail.com"
+              className="contact__card"
+            >
               <i className="bx bx-mail-send contact__card-icon"></i>
 
-              <h3 className="contact__card-title">Email</h3>
               <span className="contact__card-data">
                 mohamed.fathi.per@gmail.com
               </span>
+            </a>
 
-              <a
-                href="mailto:mohamed.fathi.per@gmail.com"
-                className="contact__button"
-              >
-                Write me{" "}
-                <i className="bx bx-right-arrow-alt contact__button-icon"></i>
-              </a>
-            </div>
-
-            <div className="contact__card">
+            <a
+              href="https://linkedin.com/in/mohamed-f-abdrabou/"
+              target="_blank"
+              rel="noreferrer"
+              className="contact__card"
+            >
               <i className="bx bxl-linkedin contact__card-icon"></i>
 
-              <h3 className="contact__card-title">LinkedIn</h3>
               <span className="contact__card-data">mohamed-f-abdrabou</span>
+            </a>
 
-              <a
-                href="https://linkedin.com/in/mohamed-f-abdrabou/"
-                target="_blank"
-                rel="noreferrer"
-                className="contact__button"
-              >
-                Connect{" "}
-                <i className="bx bx-right-arrow-alt contact__button-icon"></i>
-              </a>
-            </div>
-
-            <div className="contact__card">
+            <a
+              href="https://github.com/mohamedFabdrabo"
+              target="_blank"
+              rel="noreferrer"
+              className="contact__card"
+            >
               <i className="bx bxl-github contact__card-icon"></i>
 
-              <h3 className="contact__card-title">GitHub</h3>
               <span className="contact__card-data">mohamedFabdrabo</span>
-
-              <a
-                href="https://github.com/mohamedFabdrabo"
-                target="_blank"
-                rel="noreferrer"
-                className="contact__button"
-              >
-                Visit{" "}
-                <i className="bx bx-right-arrow-alt contact__button-icon"></i>
-              </a>
-            </div>
+            </a>
           </div>
         </div>
 

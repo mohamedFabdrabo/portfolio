@@ -1,13 +1,15 @@
 .contact__container {
-    grid-template-columns: repeat(2, minmax(320px, 360px));
+    grid-template-columns: repeat(2, minmax(300px, 340px));
     justify-content: center;
-    align-items: start;
+    align-items: flex-start;
     column-gap: 6rem;
     padding-bottom: 3rem;
 }
 
 .contact__content {
     width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .contact__title {
@@ -19,17 +21,27 @@
 
 .contact__info {
     display: grid;
+    grid-template-rows: repeat(3, minmax(0, 1fr));
     row-gap: 1rem;
     grid-template-columns: 1fr;
+    flex: 1;
 }
 
 .contact__card {
     background: linear-gradient(180deg, rgba(255, 252, 244, 0.7), rgba(255, 252, 244, 0.5));
     border: 1px solid rgba(107, 127, 90, 0.12);
-    padding: 1rem;
+    padding: 0.85rem 0.95rem;
+    min-height: 7rem;
     border-radius: 1rem;
     text-align: center;
     box-shadow: 0 18px 40px rgba(79, 95, 67, 0.16);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 0.3rem;
+    text-decoration: none;
+    color: var(--title-color);
 }
 
 .contact__card-icon {
@@ -66,18 +78,24 @@
     transition: 0.3s;
 }
 
-.contact__button:hover .contact__button-icon {
-    transform: translate(0.25rem);
+.contact__card-arrow {
+    margin-top: 0.15rem;
+}
+
+.contact__card:hover {
+    transform: translateY(-2px);
 }
 
 .contact__form {
     width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .contact__form-div {
     position: relative;
-    margin-bottom: var(--mb-2);
-    height: 4rem;
+    margin-bottom: 1rem;
+    height: 3.5rem;
 }
 
 .contact__form-input {
@@ -106,11 +124,17 @@
 }
 
 .contact__form-area {
-    height: 11rem;
+    height: 8.5rem;
+    margin-bottom: 1rem;
 }
 
 .contact__form-area textarea {
     resize: none;
+}
+
+.contact__form .button {
+    margin-top: auto;
+    align-self: flex-start;
 }
 
 .contact__message {
@@ -158,6 +182,10 @@
     .contact__container {
         grid-template-columns: 1fr;
         row-gap: 3rem;
+    }
+
+    .contact__content {
+        height: auto;
     }
 
     .contact__info {
